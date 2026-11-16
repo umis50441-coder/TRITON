@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
         addSwitch("Porter");
 
         setContentView(mainLayout);
+    }
         @Override
 protected void onResume() {
     super.onResume();

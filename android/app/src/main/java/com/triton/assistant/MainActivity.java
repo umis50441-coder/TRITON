@@ -66,7 +66,6 @@ protected void onResume() {
         android.widget.Toast.LENGTH_LONG
     ).show();
         }
-         }
 
     private void addButton(String text) {
         Button button = new Button(this);

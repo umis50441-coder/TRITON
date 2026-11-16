@@ -48,7 +48,24 @@ public class MainActivity extends Activity {
         addSwitch("Porter");
 
         setContentView(mainLayout);
-    }
+        @Override
+protected void onResume() {
+    super.onResume();
+
+    android.content.SharedPreferences prefs =
+        getSharedPreferences("TRITON", MODE_PRIVATE);
+
+    String app = prefs.getString("last_app", "No ride yet");
+    String title = prefs.getString("last_title", "");
+    String message = prefs.getString("last_message", "");
+
+    android.widget.Toast.makeText(
+        this,
+        app + "\n" + title + "\n" + message,
+        android.widget.Toast.LENGTH_LONG
+    ).show();
+        }
+         }
 
     private void addButton(String text) {
         Button button = new Button(this);
